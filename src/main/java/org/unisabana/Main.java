@@ -1,13 +1,16 @@
 package org.unisabana;
 
 
+import org.unisabana.base.pizzadelgada.PizzaDelgadaFactory;
+import org.unisabana.base.pizzagruesa.PizzaMasaGruesaFactory;
+import org.unisabana.base.pizzaintegral.PizzaMasaIntegralFactory;
 import java.util.Arrays;
 import java.util.Scanner;
 
 
 public class Main {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args)  {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Bienvenido a la pizzeria 'su favorita' ");
@@ -40,17 +43,14 @@ public class Main {
         switch (tipo) {
             case 1:
 
-                System.out.println("El sistema preparará una Pizza delgada , de tamaño " + dimension + " con los siguientes ingredientes " + ingredientes);
                 PizzaFactory pizzaDelgada = new PizzaDelgadaFactory();
                 pizzaDelgada.crearPizza(dimension, ingredientes, "Delgada",coccion);
                 break;
             case 2:
-                System.out.println("El sistema preparará una Pizza delgada , de tamaño " + dimension + " con los siguientes ingredientes " + ingredientes);
                 PizzaFactory pizzaIntegral = new PizzaMasaIntegralFactory();
                 pizzaIntegral.crearPizza(dimension, ingredientes, "Integral",coccion);
                 break;
             case 3:
-                System.out.println("El sistema preparará una Pizza delgada , de tamaño " + dimension + " con los siguientes ingredientes " + ingredientes);
                 PizzaFactory pizzaGruesa = new PizzaMasaGruesaFactory();
                 pizzaGruesa.crearPizza(dimension, ingredientes, "Masa Gruesa",coccion);
                 break;
