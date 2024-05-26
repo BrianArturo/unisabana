@@ -1,8 +1,8 @@
 package org.unisabana;
 
-public interface PizzaFactory {
+public abstract class PizzaFactory {
 
-   void crearPizza(String tamano, String ingredientes, String tipo, Integer coccion);
+   public abstract void crearPizza(String tamano, String ingredientes);
 
 
 }

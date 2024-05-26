@@ -18,7 +18,7 @@ public class Main {
         System.out.println("Por favor seleccione el tipo de pizza que desea:");
         System.out.println("1. Pizza Delgada");
         System.out.println("2. Pizza Integral");
-        System.out.println("3. Pizza Normal");
+        System.out.println("3. Pizza Gruesa");
 
         int tipo = scanner.nextInt();
         validarOpciones(tipo);
@@ -39,20 +39,20 @@ public class Main {
         // Cerrar el Scanner al finalizar su uso
         scanner.close();
         String dimension = DimensionPizza.buscarPorCodigo(tamano).getNombre();
-        Integer coccion = DimensionPizza.buscarPorCodigo(tamano).getCocion();
+
         switch (tipo) {
             case 1:
 
                 PizzaFactory pizzaDelgada = new PizzaDelgadaFactory();
-                pizzaDelgada.crearPizza(dimension, ingredientes, "Delgada",coccion);
+                pizzaDelgada.crearPizza(dimension, ingredientes);
                 break;
             case 2:
                 PizzaFactory pizzaIntegral = new PizzaMasaIntegralFactory();
-                pizzaIntegral.crearPizza(dimension, ingredientes, "Integral",coccion);
+                pizzaIntegral.crearPizza(dimension, ingredientes);
                 break;
             case 3:
                 PizzaFactory pizzaGruesa = new PizzaMasaGruesaFactory();
-                pizzaGruesa.crearPizza(dimension, ingredientes, "Masa Gruesa",coccion);
+                pizzaGruesa.crearPizza(dimension, ingredientes);
                 break;
             default:
                 System.out.println("Opcion no valida");
