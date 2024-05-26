@@ -4,7 +4,6 @@ import dyas.tdd.registry.Gender;
 import dyas.tdd.registry.Person;
 import dyas.tdd.registry.RegisterResult;
 import dyas.tdd.registry.Registry;
-import dyas.tdd.registry.equivalencia.Utils;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,7 +12,7 @@ public class RegistryTest {
     private Registry registry = new Registry();
 
     /**
-     * Clase de equivalencia xxxx
+     * Clase de equivalencia Edad ->Valida
      */
     @Test
     public void validateRegistryResultValid() {
@@ -24,7 +23,7 @@ public class RegistryTest {
     }
 
     /**
-     * Clase de equivalencia xxxx
+     * Clase de equivalencia Edad ->Por debajo
      */
     @Test
     public void validateRegistryResultUnderage() {
@@ -34,7 +33,7 @@ public class RegistryTest {
     }
 
     /**
-     * Clase de equivalencia xxxx
+     * Clase de equivalencia Edad -> Invalida
      */
     @Test
     public void validateRegistryResultInvalidage() {
@@ -45,7 +44,7 @@ public class RegistryTest {
 
 
     /**
-     * Clase de equivalencia xxxx
+     * Clase de equivalencia alive -> Dead
      */
     @Test
     public void validateRegistryResultDead() {
@@ -55,16 +54,21 @@ public class RegistryTest {
     }
 
     /**
-     * Clase de equivalencia xxxx
+     * Clase de equivalencia alive -> Life
      */
+    @Test
+    public void validateRegistryResultLife() {
+        Person person = new Person("Manuel",1,18, Gender.MALE,true);
+        RegisterResult result = registry.registerVoter(person);
+        Assert.assertEquals(RegisterResult.VALID, result);
+
+    }
+
     @Test
     public void validateRegistryResultDuplicated() {
         Person person = new Person("Rodolfo",1,18,Gender.MALE,true);
         registry.registerVoter(person);
-        Person person1 = new Person("Rodolfo",1,18,Gender.MALE,true);
-        //RegisterResult result2 = registry.registerVoter(person1);
-        //RegisterResult result2 = registry.registerVoter(person1);
-        Assert.assertEquals(RegisterResult.DUPLICATED, registry.registerVoter(person1));
+        Assert.assertEquals(RegisterResult.DUPLICATED, registry.registerVoter(person));
 
     }
 

@@ -16,13 +16,14 @@ public class Registry {
         if (!p.isAlive()) {
             registerResult = RegisterResult.DEAD;
         }
+        if (!Utils.validarEdad(p.getAge())) {
+            registerResult = RegisterResult.INVALID_AGE;
+        }
 
         if (Utils.validarUnderage(p.getAge())) {
             registerResult = RegisterResult.UNDERAGE;
         }
-        if (!Utils.validarEdad(p.getAge())) {
-            registerResult = RegisterResult.INVALID_AGE;
-        }
+
         if (personas.contains(p)) {
             registerResult = RegisterResult.DUPLICATED;
         }
