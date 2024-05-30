@@ -1,5 +1,4 @@
-<img height="550" src="C:\Users\bamg2\OneDrive\Imágenes\Capturas de pantalla\DiagramaPizza.png" width="750"/>
-
+![DiagramaPizza.png](src%2Fmain%2Fjava%2Fresources%2FDiagramaPizza.png)
 Integrantes
 
 Jose Ferney
