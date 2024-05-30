@@ -1,6 +1,5 @@
 Integrantes:
-<img src="C:\Users\bamg2\OneDrive\Imágenes\Capturas de pantalla\ClaseEquivalencia.png"/>
-
+![ClaseEquivalencia.png](src%2Fmain%2Fresources%2FClaseEquivalencia.png)
 Jose Ferney
 Nazly Karen
 Rodolfo Silvera
